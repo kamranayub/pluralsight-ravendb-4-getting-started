@@ -1,0 +1,45 @@
+@page "{show:int=1}"
+@model IndexPage
+@{ ViewBag.Title = "TED Talks"; }
+
+<div class="d-flex flex-column flex-xl-row align-items-center justify-content-xl-between mb-3">
+
+    <form class="form-inline align-items-start" method="GET">        
+        <div class="input-group mb-3 mr-2">
+            <select name="speaker" asp-for="Speaker" asp-items="Model.Speakers" class="form-control"></select>
+            <span class="input-group-btn">
+                <button class="btn btn-secondary" type="submit">Filter by Speaker</button>
+            </span>
+        </div>
+    </form>
+
+    <form class="form-inline align-items-start flex-nowrap" method="GET">        
+        <div class="input-group mb-3 mr-2">
+            <select name="tag" asp-for="Tag" asp-items="Model.Tags" class="form-control"></select>
+            <span class="input-group-btn">
+                <button class="btn btn-secondary" type="submit">Filter by Tag</button>
+            </span>
+        </div>
+        <div class="form-group">
+            <a class="btn btn-primary" asp-page="/Create">Add Talk</a>
+        </div>
+    </form>    
+</div>
+
+<div class="d-flex justify-content-between flex-wrap">
+    @foreach (var talk in Model.Talks) {
+        <div class="talk-card card mb-2">
+            <div class="card-body">
+                <h4 class="card-title"><a asp-page="/Talk" asp-route-id="@talk.ClientId">@talk.Headline</a></h4>
+                <h6 class="card-subtitle mb-2 text-muted">@talk.SpeakerName</h6>
+                <p class="card-text">@talk.Description</p>
+            </div>
+        </div>
+    }
+</div>
+
+@if (Model.HasNextPage) {
+    <p class="text-center">
+        <a class="btn btn-primary btn-lg" asp-page="/Index" asp-route-show=@Model.NextPage>Next</a>
+    </p>
+}

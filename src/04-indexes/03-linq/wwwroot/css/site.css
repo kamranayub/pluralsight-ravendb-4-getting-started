@@ -1,0 +1,25 @@
+﻿body {
+    background: #f2f2f2;
+}
+
+.site-title {
+    font-weight: bold;
+    text-transform: lowercase;
+    letter-spacing: -1px;
+}
+.site-title a {
+    color: #333;
+}
+.site-title a:hover {
+    text-decoration: none;
+    color: rgb(68, 68, 68);
+}
+.site-title span {
+    color: #E62B1E;
+    text-transform: uppercase;
+}
+
+/* Talk List */
+.talk-card {
+    flex-basis: 30%;
+}

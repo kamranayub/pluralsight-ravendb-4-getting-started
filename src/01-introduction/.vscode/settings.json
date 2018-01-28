@@ -1,0 +1,19 @@
+{
+    "editor.formatOnSave": true,
+
+    "editor.formatOnPaste": true,
+
+    "editor.formatOnType": true,
+
+    "editor.codeLens": false,
+
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/bin": true,
+        "**/obj": true
+    }
+}

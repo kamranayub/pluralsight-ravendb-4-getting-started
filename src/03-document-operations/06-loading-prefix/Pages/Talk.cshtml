@@ -1,0 +1,58 @@
+@page "{id}"
+@model TalkPage
+@{ ViewBag.Title = Model.Talk.Headline + " : Talks"; }
+
+<div class="d-flex justify-content-between mb-5">
+    <div class="w-75 pr-5">
+        <h1>
+            @Model.Talk.Headline 
+            <small class="text-muted">
+                <a asp-page="/Index" asp-route-speaker="@Model.Talk.Speaker">@Model.Talk.SpeakerName</a>
+            </small>
+        </h1>
+
+        <p class="lead">@Model.Talk.Description</p>
+        
+        @if (Model.Talk.SpeakerTalks.Length > 0) {
+            <div class="w-50">
+                <h6 class="text-muted">Other talks by @Model.Talk.SpeakerName</h6>
+
+                <div class="list-group mb-3">
+                @foreach (var talk in Model.Talk.SpeakerTalks) {
+
+                    <a class="list-group-item" asp-page="/Talk" asp-route-id="@talk.ClientId">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">
+                                @talk.Headline
+                            </h5>
+                            <small class="text-muted text-right">@talk.Published.ToString("MMMM yyyy")</small>
+                        </div>
+                        <small>@talk.SpeakerName</small>        
+                    </a>
+                }
+                </div>
+            </div>
+        }        
+    </div>
+    <div class="w-25">
+        <p class="text-muted">Recorded @Model.Talk.Published.ToString("MMMM yyyy") at @Model.Talk.Event</p>
+
+        @if (Model.Talk.Tags.Length > 0) {
+            <p>
+            @foreach (var tag in Model.Talk.Tags) {
+                <a asp-page="/Index" asp-route-tag="@tag" class="badge badge-dark">
+                    @tag
+                </a>
+            }
+            </p>
+        }
+
+        <p>
+            <a class="btn btn-secondary" asp-page="/Edit" asp-route-id="@Model.Talk.ClientId">Edit Talk</a>
+
+            <form method="POST">
+                <button class="btn btn-danger" type="submit" asp-page-handler="delete" asp-route-id="@Model.Talk.ClientId">Delete</button>
+            </form>
+        </p>
+    </div>
+</div>

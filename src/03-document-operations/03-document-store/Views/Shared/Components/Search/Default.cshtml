@@ -1,0 +1,10 @@
+@model string
+
+<form class="mt-5 mb-5 w-50 mx-auto" method="GET" action="@Url.Page("/Index")">    
+    <div class="input-group input-group-lg">
+        <input name="search" value="@Model" class="form-control" type="text" placeholder="search..." />
+        <span class="input-group-btn">
+            <button class="btn btn-primary" type="submit">Go!</button>
+        </span>
+    </div>
+</form>

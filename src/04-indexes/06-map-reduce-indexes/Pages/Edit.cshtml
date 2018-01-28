@@ -1,0 +1,28 @@
+@page "{id}"
+@model EditPage
+@{ ViewBag.Title = "Editing " + Model.Talk.Headline; }
+
+<h1>Edit @Model.Talk.Headline</h1>
+
+<form method="POST">
+    <div asp-validation-summary="All"></div>
+
+    <input asp-for="Version" type="hidden" />
+
+    <div class="form-group w-25">
+        <label asp-for="Talk.Headline"></label>
+        <input class="form-control" asp-for="Talk.Headline" />        
+    </div>
+
+    <div class="form-group w-50">
+        <label asp-for="Talk.Description"></label>
+        <textarea class="form-control" asp-for="Talk.Description" rows="5"></textarea>        
+    </div>
+    
+    <div class="form-group w-50">
+        <label asp-for="Talk.Speaker">Speaker</label>
+        <select asp-for="Talk.Speaker" asp-items="Model.Speakers"></select>
+    </div>
+
+    <p><button type="submit" class="btn btn-primary">Save</button></p>
+</form>
