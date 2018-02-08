@@ -1,6 +1,6 @@
 # RavenDB 4: Getting Started Pluralsight Course
 
-This sample code is designed to be used alongside the Pluralsight course **RavenDB 4: Getting Started**. You may also use it as a reference application for a RavenDB demo.
+This sample code is designed to be used alongside the Pluralsight course **[RavenDB 4: Getting Started](https://app.pluralsight.com/library/courses/ravendb-4-getting-started/table-of-contents)**. You may also use it as a reference application for a RavenDB demo.
 
 For course content corrections, see [ERRATA](ERRATA.md). For changes to the code, see [CHANGELOG](CHANGELOG.md).
 
