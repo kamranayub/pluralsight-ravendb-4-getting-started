@@ -7,7 +7,7 @@
         {
             "taskName": "build",
             "args": [
-                "${workspaceRoot}/src/pluralsight-raven-getting-started.csproj"
+                "${workspaceRoot}/pluralsight-raven-getting-started.csproj"
             ],
             "isBuildCommand": true,
             "problemMatcher": "$msCompile"
