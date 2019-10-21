@@ -2,6 +2,8 @@
 
 This sample code is designed to be used alongside the Pluralsight course **[RavenDB 4: Getting Started](https://bit.ly/PSRavenDB4)**. You may also use it as a reference application for a RavenDB demo.
 
+[![Course overview sreenshot](https://user-images.githubusercontent.com/563819/67175795-1765da00-f38d-11e9-9966-b0999f612758.png)](https://bit.ly/PSRavenDB4)
+
 For course content corrections, see [ERRATA](ERRATA.md). For changes to the code, see [CHANGELOG](CHANGELOG.md).
 
 ## Useful Resources
